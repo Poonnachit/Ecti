@@ -1,5 +1,4 @@
 <div class="card">
-    <div class="card-header text-center">Add paper</div>
     <div class="card-body">
         <div class="card-title">
             <h3 class="title-2">Paper info</h3>
@@ -10,25 +9,43 @@
 
             </div>
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <div class="form-group">
                         <label for="paper_id">ID</label>
                         <input type="text" class="form-control" id="paper_id" name="paper_id">
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-9">
                     <div class="form-group">
                         <label for="field">Field</label>
                         <select class="form-control" id="field">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option selected disabled>Please select field</option>
+                            <?php
+                            $fields = array(
+                                'Invited',
+                                'Review',
+                                'Algorithm',
+                                'AI & ML',
+                                'Com System & Security',
+                                'Networks & Clouds',
+                                'Data Science & IoT',
+                                'Machine Vision, DSP, HCI',
+                                'Software Sys',
+                                'Emerging IT & Smart System',
+                                'SS ECTI',
+                                'SS non-ECTI',
+                                'Out-of-Scope'
+                            );
+                            foreach ($fields as $field) {
+                                echo '<option value="' . $field . '">' . $field . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
-                <div class="col-8">
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="form-group">
                         <label for="title" class="control-label mb-1">Title</label>
                         <input id="title" name="title" type="text" class="form-control">
