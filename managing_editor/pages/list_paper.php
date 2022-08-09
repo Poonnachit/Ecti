@@ -28,8 +28,10 @@
             <i class="zmdi zmdi-filter-list"></i>filters</button>
     </div>
     <div class="table-data__tool-right">
-        <button class="au-btn au-btn-icon au-btn--blue">
-            <i class="zmdi zmdi-plus"></i>Add paper</button>
+        <a href="./?content=add_paper">
+            <button class="au-btn au-btn-icon au-btn--blue">
+                <i class="zmdi zmdi-plus"></i>Add paper</button>
+        </a>
     </div>
 </div>
 <div class="table-responsive table-responsive-data2">
@@ -41,40 +43,61 @@
                 <th>Author</th>
                 <th>Affiliation </th>
                 <th>Received date</th>
-                <th>status</th>
+                <th>Status</th>
                 <th></th>
             </tr>
         </thead>
+        <?php
+        require "../php/config.php";
+        $sql = "SELECT * FROM paper";
+        $query = mysqli_query($con, $sql);
+        while ($data = mysqli_fetch_assoc($query)) {
+        ?>
         <tbody>
             <tr class="tr-shadow">
-                <td>Lori Lynch</td>
                 <td>
-                    <span class="block-email">doe@example.com</span>
+                    <?php echo $data['field']; ?>
                 </td>
-                <td class="desc">Camera C430W 4k</td>
-                <td>2018-09-24 19:10</td>
                 <td>
-                    <span class="status--process">Processed</span>
+                    <?php echo $data['title']; ?>
                 </td>
-                <td>$699.00</td>
+                <td>
+                    <?php echo $data['author']; ?>
+                </td>
+                <td>
+                    <?php echo $data['affiliation']; ?>
+                </td>
+                <td>
+                    <?php echo $data['received']; ?>
+                </td>
+                <td>
+                    <?php echo $data['status']; ?>
+                </td>
                 <td>
                     <div class="table-data-feature">
-                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                            <i class="zmdi zmdi-mail-send"></i>
-                        </button>
-                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                            <i class="zmdi zmdi-edit"></i>
-                        </button>
-                        <!-- <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                            <i class="zmdi zmdi-delete"></i>
-                        </button> -->
-                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                            <i class="zmdi zmdi-more"></i>
-                        </button>
+                        <a href="./?content=edit_paper&paper_id=<?= $data["paper_id"] ?>">
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <i class="zmdi zmdi-edit"></i>
+                            </button>
+                        </a>
+                        <a href="./?content=delete_paper&paper_id=<?= $data["paper_id"] ?>">
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                <i class="zmdi zmdi-delete"></i>
+                            </button>
+                        </a>
+                        <a href="./?content=view_paper&paper_id=<?= $data["paper_id"] ?>">
+                            <button class="item" data-toggle="tooltip" data-placement="top" title="View">
+                                <i class="zmdi zmdi-eye"></i>
+                            </button>
+                        </a>
                     </div>
                 </td>
             </tr>
             <tr class="spacer"></tr>
+        </tbody>
+        <?php
+        }
+        ?>
         </tbody>
     </table>
 </div>

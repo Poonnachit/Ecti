@@ -8,7 +8,7 @@ $dbname = "ECTI";
 $con = mysqli_connect($host, $user, $pass, $dbname);
 
 // Check connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
+// if (!$con) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
+// echo "Connected successfully";

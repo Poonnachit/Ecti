@@ -116,8 +116,8 @@
 
 <!-- MENU SIDEBAR-->
 <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
-        <a href="#">
+    <div class="logo text-center">
+        <a href="./?content=">
             <h1>ECTI</h1>
         </a>
     </div>
