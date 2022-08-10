@@ -4,10 +4,7 @@
             <h3 class="title-2">Paper info</h3>
         </div>
         <hr>
-        <form action="" method="post">
-            <div class="row">
-
-            </div>
+        <form action="./php/action_add_paper.php" method="post">
             <div class="row">
                 <div class="col-3">
                     <div class="form-group">
@@ -18,7 +15,7 @@
                 <div class="col-9">
                     <div class="form-group">
                         <label for="field">Field</label>
-                        <select class="form-control" id="field">
+                        <select class="form-control" id="field" name="field">
                             <option selected disabled>Please select field</option>
                             <?php
                             $fields = array(

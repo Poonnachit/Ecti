@@ -74,19 +74,19 @@
                     <?php echo $data['status']; ?>
                 </td>
                 <td>
-                    <div class="table-data-feature">
+                    <div class="table-data-feature justify-content-center">
                         <a href="./?content=edit_paper&paper_id=<?= $data["paper_id"] ?>">
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                            <button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">
                                 <i class="zmdi zmdi-edit"></i>
                             </button>
                         </a>
                         <a href="./?content=delete_paper&paper_id=<?= $data["paper_id"] ?>">
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                            <button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Delete">
                                 <i class="zmdi zmdi-delete"></i>
                             </button>
                         </a>
                         <a href="./?content=view_paper&paper_id=<?= $data["paper_id"] ?>">
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="View">
+                            <button class="item mr-2" data-toggle="tooltip" data-placement="top" title="View">
                                 <i class="zmdi zmdi-eye"></i>
                             </button>
                         </a>
