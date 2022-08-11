@@ -1,9 +1,43 @@
+<!-- HEADER DESKTOP-->
+<header class="header-desktop " style="transition: padding-left .5s;">
+    <div class=" section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="header-wrap justify-content-end">
+                <div class="header-button">
+                    <div class="account-wrap">
+                        <div class="account-item clearfix js-item-menu">
+                            <div class="content">
+                                <input type="button" value="hide"
+                                    onclick="$('#side-bar').css('left', -300);$('#main-page').css('padding-left', 0);">
+                                <a class="js-acc-btn" href="#"><?= $_SESSION["name"] ?></a>
+                            </div>
+                            <div class="account-dropdown js-dropdown">
+                                <div class="info clearfix">
+                                    <h5 class="name">
+                                        <a href="#"><?= $_SESSION["name"] ?></a>
+                                    </h5>
+                                    <span class="email"><?= $_SESSION["role"] ?></span>
+                                </div>
+                                <div class="account-dropdown__footer">
+                                    <a href="#">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- HEADER DESKTOP-->
 <!-- MENU SIDEBAR-->
-<aside class="menu-sidebar d-none d-lg-block">
+<aside class="menu-sidebar d-none d-lg-block" id="side-bar" style="transition: left .5s;">
     <div class="logo text-center">
         <a href="./?content=">
             <h1>ECTI</h1>
         </a>
+
     </div>
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
@@ -109,34 +143,3 @@
     </div>
 </aside>
 <!-- END MENU SIDEBAR-->
-<!-- HEADER DESKTOP-->
-<header class="header-desktop">
-    <div class="section__content section__content--p30">
-        <div class="container-fluid">
-            <div class="header-wrap justify-content-end">
-                <div class="header-button">
-                    <div class="account-wrap">
-                        <div class="account-item clearfix js-item-menu">
-                            <div class="content">
-                                <a class="js-acc-btn" href="#"><?= $_SESSION["name"] ?></a>
-                            </div>
-                            <div class="account-dropdown js-dropdown">
-                                <div class="info clearfix">
-                                    <h5 class="name">
-                                        <a href="#"><?= $_SESSION["name"] ?></a>
-                                    </h5>
-                                    <span class="email"><?= $_SESSION["role"] ?></span>
-                                </div>
-                                <div class="account-dropdown__footer">
-                                    <a href="#">
-                                        <i class="zmdi zmdi-power"></i>Logout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- HEADER DESKTOP-->

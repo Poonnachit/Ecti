@@ -71,7 +71,14 @@
                     <?php echo $data['received']; ?>
                 </td>
                 <td>
-                    <?php echo $data['status']; ?>
+                    <form action="./php/somefile.php" method="POST" id="status_form">
+                        <select class="form-control" name="set_status"
+                            onchange="console.log($('#status_form').submit())">
+                            <option value="">Select status</option>
+                            <option value="1">Accepted</option>
+                            <option value="2">Rejected</option>
+                        </select>
+                    </form>
                 </td>
                 <td>
                     <div class="table-data-feature justify-content-center">

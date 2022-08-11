@@ -12,13 +12,13 @@
     <?php require "../php/css.php" ?>
 </head>
 
-<body class="animsition">
+<body class="">
     <div class="page-wrapper">
-        <?php require "./header.php" ?>
+        <?php require "./navbar.php" ?>
         <!-- PAGE CONTAINER-->
-        <div class="page-container">
+        <div class="page-container" id="main-page" style="transition: padding-left .5s;">
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+            <div class="main-content" style="padding-top: 30px;">
                 <div class="section__content section__content--p30">
                     <?php
                     $content = $_GET["content"];
@@ -31,9 +31,9 @@
                     }
                     ?>
                 </div>
+                <!-- </div> -->
             </div>
         </div>
-    </div>
 </body>
 <?php require "../php/script.php" ?>
 
