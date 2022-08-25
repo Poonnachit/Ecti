@@ -10,6 +10,7 @@
     <title>Managing Editor</title>
 
     <?php require "../php/css.php" ?>
+    <?php require "../php/script.php" ?>
 </head>
 
 <body class="">
@@ -35,7 +36,6 @@
             </div>
         </div>
 </body>
-<?php require "../php/script.php" ?>
 
 </html>
 <!-- end document-->

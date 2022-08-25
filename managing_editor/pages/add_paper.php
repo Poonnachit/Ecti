@@ -1,4 +1,5 @@
-<div class="card">
+<?php include "../php/config.php" ?>
+<div class="card mt-5">
     <div class="card-body">
         <div class="card-title">
             <h3 class="title-2">Paper info</h3>
@@ -18,23 +19,16 @@
                         <select class="form-control" id="field" name="field">
                             <option selected disabled>Please select field</option>
                             <?php
-                            $fields = array(
-                                'Invited',
-                                'Review',
-                                'Algorithm',
-                                'AI & ML',
-                                'Com System & Security',
-                                'Networks & Clouds',
-                                'Data Science & IoT',
-                                'Machine Vision, DSP, HCI',
-                                'Software Sys',
-                                'Emerging IT & Smart System',
-                                'SS ECTI',
-                                'SS non-ECTI',
-                                'Out-of-Scope'
-                            );
-                            foreach ($fields as $field) {
-                                echo '<option value="' . $field . '">' . $field . '</option>';
+                            $sql = "SELECT * FROM fields";
+                            // echo $sql;
+                            $query = mysqli_query($con, $sql);
+
+                            while ($row = mysqli_fetch_assoc($query)) {
+                            ?>
+                                <option value="<?php echo $row["field"]; ?>">
+                                    <?php echo $row["field"]; ?>
+                                </option>
+                            <?php
                             }
                             ?>
                         </select>
